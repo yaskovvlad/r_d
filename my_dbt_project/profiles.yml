@@ -1,0 +1,11 @@
+dbt_hw_13:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: dbpsql
+      user: dbt_user
+      password: "12345678"
+      port: 5432
+      dbname: dbt_hw_13
+      schema: public

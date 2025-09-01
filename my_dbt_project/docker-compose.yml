@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  dbpsql:
+    image: postgres:16
+    container_name: dbpsql
+    environment:
+      POSTGRES_USER: dbt_user
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: dbt_hw_13
+      TZ: Europe/Kyiv
+    command: ["postgres", "-c", "timezone=Europe/Kyiv"]
+    ports:
+      - "5432:5432"
+    networks:
+      - dbt_network
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:latest
+    container_name: dbt
+    networks:
+      - dbt_network
+    volumes:
+      # проєкт dbt
+      - ./my_dbt_project:/usr/app
+      # profiles.yml
+      - ./my_dbt_project/profiles.yml:/root/.dbt/profiles.yml
+    command: 
+      docs serve
+    working_dir: /usr/app
+    depends_on:
+      - dbpsql
+    stdin_open: true
+    tty: true
+
+networks:
+  dbt_network:
+
+volumes:
+  db_data:
