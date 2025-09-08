@@ -39,22 +39,22 @@ aux 1 1 1 900 1225 0 0
 # vtxtable
 vtxtable bands 8
 vtxtable channels 8
-vtxtable band 1 BAND_A   A CUSTOM  5865 5845 5825 5805 5785 5765 5745 5725
-vtxtable band 2 BAND_B   B CUSTOM  5733 5752 5771 5790 5809 5828 5847 5866
-vtxtable band 3 BAND_E   E CUSTOM  5705 5685 5665 5645 5885 5905 5925 5945
-vtxtable band 4 BAND_F   F CUSTOM  5740 5760 5780 5800 5820 5840 5860 5880
-vtxtable band 5 BAND_R   R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
-vtxtable band 6 BAND_H   H CUSTOM  5653 5693 5733 5773 5813 5853 5893 5933
-vtxtable band 7 BAND_L   L CUSTOM  5333 5373 5413 5453 5493 5533 5573 5613
-vtxtable band 8 BAND_X   X CUSTOM  4990 5020 5050 5080 5110 5140 5170 5200
-vtxtable powerlevels 5
-vtxtable powervalues 25 100 200 400 600
-vtxtable powerlabels 25 200 500 1.5 3
+vtxtable band 1 BAND_A A CUSTOM 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BAND_B B CUSTOM 5733 5752 5771 5790 5999 5828 5847 5866
+vtxtable band 3 BAND_E E CUSTOM 5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 AIRWAVE F CUSTOM 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R CUSTOM 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWRACE L CUSTOM 5362 5399 5436 5473 5510 5547 5584 5621
+vtxtable band 7 BAND_X X CUSTOM 4990 5020 5050 5080 5110 5140 5170 5200
+vtxtable band 8 BAND_S S CUSTOM 6002 6028 6054 6080 6106 6132 6158 6184
+vtxtable powerlevels 4
+vtxtable powervalues 1 2 3 4
+vtxtable powerlabels 25 1.2 2.0 2.5 
 
 # vtx
-vtx 0 2 0 0 1 900 1100
-vtx 1 2 0 0 3 1400 1600
-vtx 2 2 0 0 5 1900 2100
+vtx 0 2 0 0 1 950 1050
+vtx 1 2 0 0 2 1450 1550
+vtx 2 2 0 0 4 1950 2050
 
 # master
 set gyro_lpf1_type = PT3
@@ -81,39 +81,44 @@ set deadband = 2
 set yaw_deadband = 2
 set pid_process_denom = 2
 set simplified_gyro_filter_multiplier = 40
-set osd_warn_bitmask = 319487
+set osd_warn_bitmask = 26623
 set osd_rssi_alarm = 14
 set osd_rssi_dbm_alarm = -110
-set osd_cap_alarm = 10000
-set osd_alt_alarm = 200
-set osd_vbat_pos = 2178
-set osd_rssi_pos = 89
-set osd_link_quality_pos = 2071
-set osd_rssi_dbm_pos = 2135
+set osd_cap_alarm = 5000
+set osd_alt_alarm = 0
+set osd_vbat_pos = 471
+set osd_rssi_pos = 449
+set osd_link_quality_pos = 14753
+set osd_rssi_dbm_pos = 14721
 set osd_tim_1_pos = 2114
-set osd_flymode_pos = 2049
-set osd_throttle_pos = 2348
-set osd_vtx_channel_pos = 2101
-set osd_crosshairs_pos = 238
+set osd_flymode_pos = 14785
+set osd_throttle_pos = 14592
+set osd_vtx_channel_pos = 2506
+set osd_crosshairs_pos = 14573
 set osd_ah_sbar_pos = 2287
-set osd_craft_name_pos = 2091
+set osd_craft_name_pos = 14401
 set osd_pilot_name_pos = 2059
-set osd_altitude_pos = 18818
-set osd_warnings_pos = 14731
-set osd_avg_cell_voltage_pos = 2146
+set osd_altitude_pos = 14390
+set osd_warnings_pos = 14761
+set osd_avg_cell_voltage_pos = 2487
 set osd_ready_mode_pos = 396
-set osd_esc_tmp_pos = 2081
+set osd_esc_tmp_pos = 2455
 set osd_stat_bitmask = 42087980
 set osd_displayport_device = AUTO
 set osd_canvas_width = 30
-set osd_canvas_height = 13
+set osd_canvas_height = 16
+set osd_current_pos = 14806
+set osd_mah_drawn_pos = 14423
+set osd_battery_usage_pos = 32825
+set osd_tim_2_pos = 374
+set osd_disarmed_pos = 298
 set debug_mode = GYRO_SCALED
 set vtx_band = 5
-set vtx_channel = 1
-set vtx_power = 3
+set vtx_channel = 8
+set vtx_power = 2
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
-set vtx_freq = 5658
-set vcd_video_system = AUTO
+set vtx_freq = 5917
+set vcd_video_system = PAL
 set gyro_1_sensor_align = DEFAULT
 set gyro_1_align_pitch = 1800
 set gyro_1_align_yaw = 2700
