@@ -15,7 +15,7 @@ board_name XRush4_V3
 mcu_id 003c00343034510f30353933
 signature 
 
-# name: vd10xrush4v3
+# name: SDUA_325283
 
 # feature
 feature SERVO_TILT
@@ -23,18 +23,33 @@ feature TELEMETRY
 feature LED_STRIP
 feature OSD
 feature CHANNEL_FORWARDING
-feature ESC_SENSOR
+feature -ESC_SENSOR
+feature -RX_PARALLEL_PWM
 
 # serial
-serial 1 1024 115200 57600 0 115200
-serial 3 64 115200 57600 0 115200
+serial 0 8192 115200 57600 0 115200
+serial 1 0 115200 57600 0 115200
+serial 2 16384 115200 57600 0 115200
+serial 3 1 115200 57600 0 115200
+serial 4 1024 115200 57600 0 115200
+serial 5 64 115200 57600 0 115200
 
 # servo
 servo 0 1000 2000 1500 100 7
 
+# beeper
+beeper -GPS_STATUS
+beeper -ON_USB
+
+# beacon
+beacon -RX_LOST
+beacon RX_SET
+
 # aux
-aux 0 0 0 1775 2100 0 0
-aux 1 1 1 900 1225 0 0
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 900 1300 0 0
+aux 3 13 5 1700 2100 0 0
+aux 4 26 3 1900 2100 0 0
 
 # vtxtable
 vtxtable bands 8
@@ -123,8 +138,11 @@ set gyro_1_sensor_align = DEFAULT
 set gyro_1_align_pitch = 1800
 set gyro_1_align_yaw = 2700
 set rpm_filter_min_hz = 70
-set craft_name = vd10xrush4v3
+set craft_name = SDUA_325283
 set pilot_name = vd10
+set camera_control_ref_voltage = 328
+set camera_control_internal_resistance = 270
+set camera_control_button_resistance = 450,270,150,75,15
 
 
 profile 0
@@ -178,6 +196,12 @@ profile 3
 profile 0
 
 rateprofile 0
+set roll_expo = 10
+set pitch_expo = 10
+set yaw_expo = 10
+set roll_srate = 60
+set pitch_srate = 60
+set yaw_srate = 60
 
 rateprofile 1
 
